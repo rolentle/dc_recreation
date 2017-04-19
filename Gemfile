@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'faraday', '~> 0.9.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -51,6 +53,8 @@ end
 
 group :test do
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  gem 'webmock', '~> 2.1'
+  gem 'vcr', '~> 3.0', '>= 3.0.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
