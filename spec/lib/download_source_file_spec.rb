@@ -6,7 +6,7 @@ describe DownloadSourceFile do
   end
 
   describe 'pulls down the files' do
-    let (:results) { DownloadSourceFile.execute }
+    let (:results) { DownloadSourceFile.new.response }
     it 'returns 200' do
       VCR.use_cassette('get csv file') do
         expect(results.status).to be 200
