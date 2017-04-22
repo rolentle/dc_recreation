@@ -12,7 +12,7 @@ class DownloadSourceFile
 
   def parsed_results
     @parsed_results ||= CSV.parse(response.body.force_encoding('UTF-8'), headers: true, header_converters: :symbol).map do |row|
-      row.to_hash
+      RecreationCenterDataObject.new(row.to_hash)
     end
   end
 end

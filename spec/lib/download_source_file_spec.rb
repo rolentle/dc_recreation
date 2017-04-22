@@ -35,7 +35,7 @@ describe DownloadSourceFile do
 
     it 'object has keys' do
       VCR.use_cassette('get csv file') do
-        expect(parsed_results.first.keys).to eq expected_keys
+        expect(parsed_results.first.attributes.keys).to eq expected_keys
       end
     end
   end
