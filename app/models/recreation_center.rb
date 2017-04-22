@@ -1,0 +1,2 @@
+class RecreationCenter < ApplicationRecord
+end
