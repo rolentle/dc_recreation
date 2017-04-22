@@ -39,4 +39,13 @@ describe DownloadSourceFile do
       end
     end
   end
+
+  describe 'executing subject' do
+    it 'create RecreationCenters' do
+      VCR.use_cassette('get csv file') do
+        DownloadSourceFile.execute
+        expect(RecreationCenter.count).to be > 0
+      end
+    end
+  end
 end

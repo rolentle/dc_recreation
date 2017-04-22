@@ -4,6 +4,9 @@ class DownloadSourceFile
   attr_reader :response
 
   def self.execute
+    new.parsed_results.each do |rec_center|
+      RecreationCenter.create(rec_center.attributes)
+    end
   end
 
   def initialize
