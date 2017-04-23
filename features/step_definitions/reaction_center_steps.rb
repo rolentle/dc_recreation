@@ -6,8 +6,16 @@ When(/^I go the the recreation center page with objectid of (\d+)$/) do |arg1|
   visit recreation_center_path(arg1)
 end
 
+When(/^I click on "([^"]*)"$/) do |arg1|
+  click_on(arg1)
+end
+
 Then(/^I see "([^"]*)"$/) do |arg1|
   expect(page).to have_content(arg1)
+end
+
+Then(/^I do not see "([^"]*)"$/) do |arg1|
+  expect(page).to have_no_content(arg1)
 end
 
 Given(/^there is a recreation center with:$/) do |table|

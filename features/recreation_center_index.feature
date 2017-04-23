@@ -14,3 +14,9 @@ Feature: Recreation Center Index Page
     And I see "201 N STREET SW"
     And I see "Benning Park Community Center"
     And I see "SOUTHERN AVE. AND FABLE ST., SE"
+
+  Scenario: Link Index Page to Show Page
+    When I go the the recreation center index page
+    And I click on "King Greenleaf Recreation Center"
+    Then I see "King Greenleaf Recreation Center"
+    And I do not see "Benning Park Community Center"
