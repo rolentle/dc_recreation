@@ -1,3 +1,7 @@
+When(/^I go the the recreation center index page$/) do
+  visit recreation_centers_path
+end
+
 When(/^I go the the recreation center page with objectid of (\d+)$/) do |arg1|
   visit recreation_center_path(arg1)
 end

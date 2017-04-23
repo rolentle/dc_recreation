@@ -1,0 +1,7 @@
+<ul>
+  <% @recreation_centers.each do |rec_center| %>
+    <li>
+      <%= rec_center.name %> <%= rec_center.address %> <%= rec_center.status %>
+    </li>
+  <% end %>
+</ul>
