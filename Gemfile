@@ -56,7 +56,7 @@ group :test do
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
   gem 'webmock', '~> 2.1'
   gem 'vcr', '~> 3.0', '>= 3.0.1'
-  gem 'cucumber-rails', '~> 1.4', '>= 1.4.2'
+  gem 'cucumber-rails', '~> 1.4', '>= 1.4.2', require: false
   gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
   gem 'factory_girl_rails', '~> 4.7'
 end
