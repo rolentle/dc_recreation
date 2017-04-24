@@ -1,7 +1,17 @@
-<ul>
+<div class="ui middle aligned animated list">
   <% @recreation_centers.each do |rec_center| %>
-    <li>
-      <%= link_to rec_center.name, recreation_center_path(rec_center.objectid) %> <%= rec_center.address %> <%= rec_center.status %>
-    </li>
+    <div class='item'>
+      <% if rec_center.status == "Open" %>
+      <i class="green check circle outline icon"></i>
+    <% else %>
+      <i class="red remove circle outline icon"></i>
+    <% end %>
+      <div class='content'>
+        <div class="header">
+          <%= link_to rec_center.name, recreation_center_path(rec_center.objectid) %>
+        </div>
+          <%= rec_center.address %> <%= rec_center.status %>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
