@@ -4,5 +4,7 @@ FactoryGirl.define do
     address "201 N STREET SW"
     status "Open"
     objectid 1
+    pool "none"
+    pool_name "none"
   end
 end

@@ -24,6 +24,14 @@
         <%= @recreation_center.address %>
         </div>
       </div>
+      <% unless @recreation_center.pool == 'none' %>
+      <div class='item'>
+        <i class="life ring icon"></i>
+        <div class='content'>
+          <%= @recreation_center.pool_name %> (<%= @recreation_center.pool %>)
+        </div>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>
