@@ -6,5 +6,6 @@ FactoryGirl.define do
     objectid 1
     pool "none"
     pool_name "none"
+    phone "(555) 555-5555"
   end
 end

@@ -24,6 +24,14 @@
         <%= @recreation_center.address %>
         </div>
       </div>
+      <% if @recreation_center.phone? %>
+      <div class='item'>
+        <i class="call icon"></i>
+        <div class='content'>
+        <%= @recreation_center.phone %>
+        </div>
+      </div>
+    <% end %>
       <% unless @recreation_center.pool == 'none' %>
       <div class='item'>
         <i class="life ring icon"></i>

@@ -27,7 +27,8 @@ Given(/^there is a recreation center with:$/) do |table|
                        address: rec_center.address,
                        status: rec_center.status,
                        pool: rec_center.pool,
-                       pool_name: rec_center.pool_name
+                       pool_name: rec_center.pool_name,
+                       phone: rec_center.phone
                       )
   end
 end
