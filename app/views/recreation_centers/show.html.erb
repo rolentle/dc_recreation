@@ -40,6 +40,14 @@
         </div>
       </div>
     <% end %>
+      <% unless @recreation_center.fitness_center == 'No' %>
+      <div class='item'>
+        <i class="heartbeat icon"></i>
+        <div class='content'>
+          <%= @recreation_center.fitness_center %>
+        </div>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>

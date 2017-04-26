@@ -7,5 +7,6 @@ FactoryGirl.define do
     pool "none"
     pool_name "none"
     phone "(555) 555-5555"
+    fitness_center "No"
   end
 end
