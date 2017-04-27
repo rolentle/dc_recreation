@@ -21,33 +21,41 @@
       <div class='item'>
         <i class="marker icon"></i>
         <div class='content'>
-        <%= @recreation_center.address %>
+          <%= @recreation_center.address %>
         </div>
       </div>
       <% if @recreation_center.phone? %>
-      <div class='item'>
-        <i class="call icon"></i>
-        <div class='content'>
-        <%= @recreation_center.phone %>
+        <div class='item'>
+          <i class="call icon"></i>
+          <div class='content'>
+            <%= @recreation_center.phone %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
       <% if @recreation_center.pool? %>
-      <div class='item'>
-        <i class="life ring icon"></i>
-        <div class='content'>
-          <%= @recreation_center.pool_name %> (<%= @recreation_center.pool %>)
+        <div class='item'>
+          <i class="life ring icon"></i>
+          <div class='content'>
+            <%= @recreation_center.pool_name %> (<%= @recreation_center.pool %>)
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
       <% if @recreation_center.fitness_center? %>
-      <div class='item'>
-        <i class="heartbeat icon"></i>
-        <div class='content'>
-          <%= @recreation_center.fitness_center %>
+        <div class='item'>
+          <i class="heartbeat icon"></i>
+          <div class='content'>
+            <%= @recreation_center.fitness_center %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+      <% if @recreation_center.school_site? %>
+        <div class='item'>
+          <i class="university icon"></i>
+          <div class='content'>
+            <%= @recreation_center.school_site %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

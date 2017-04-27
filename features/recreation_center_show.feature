@@ -3,9 +3,9 @@ Feature: Recreation Center Show Page
   I see Recreation Center Show Page
   Background:
     Given there is a recreation center with:
-      | objectid | name                             | address                         | status | pool   | pool_name      | phone          | fitness_center |
-      | 1        | King Greenleaf Recreation Center | 201 N STREET SW                 | Open   | indoor | Fake Pool Name | (202) 645-7454 | Cardio Center  |
-      | 2        | Benning Park Community Center    | SOUTHERN AVE. AND FABLE ST., SE | Open   | none   | none           |                | No             |
+      | objectid | name                             | address                         | status | pool   | pool_name      | phone          | fitness_center | school_site         |
+      | 1        | King Greenleaf Recreation Center | 201 N STREET SW                 | Open   | indoor | Fake Pool Name | (202) 645-7454 | Cardio Center  | no                  |
+      | 2        | Benning Park Community Center    | SOUTHERN AVE. AND FABLE ST., SE | Open   | none   | none           |                | No             | Bayside High School |
 
   Scenario: Visit Show Page
     When I go the the recreation center page with objectid of 1
@@ -16,12 +16,14 @@ Feature: Recreation Center Show Page
     And I see "indoor"
     And I see "(202) 645-7454"
     And I see "Cardio Center"
+    And I do not see "no"
 
   Scenario: Visit Show Page with no Pool or Phone
     When I go the the recreation center page with objectid of 2
     Then I see "Benning Park Community Center"
     And I do not see "none"
     And I do not see "No"
+    And I see "Bayside High School"
 
   Scenario: Link Show Page Back to Index Page
     When I go the the recreation center page with objectid of 1
