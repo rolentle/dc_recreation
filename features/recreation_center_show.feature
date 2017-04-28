@@ -3,9 +3,9 @@ Feature: Recreation Center Show Page
   I see Recreation Center Show Page
   Background:
     Given there is a recreation center with:
-      | objectid | name                             | address                         | status | pool   | pool_name      | phone          | fitness_center | school_site         |
-      | 1        | King Greenleaf Recreation Center | 201 N STREET SW                 | Open   | indoor | Fake Pool Name | (202) 645-7454 | Cardio Center  | no                  |
-      | 2        | Benning Park Community Center    | SOUTHERN AVE. AND FABLE ST., SE | Open   | none   | none           |                | No             | Bayside High School |
+      | objectid | name                             | address                         | status | pool   | pool_name      | phone          | fitness_center | school_site         | web_url                                   |
+      | 1        | King Greenleaf Recreation Center | 201 N STREET SW                 | Open   | indoor | Fake Pool Name | (202) 645-7454 | Cardio Center  | no                  | http://dpr.dc.gov/page/recreation-centers |
+      | 2        | Benning Park Community Center    | SOUTHERN AVE. AND FABLE ST., SE | Open   | none   | none           |                | No             | Bayside High School | http://dpr.dc.gov/page/recreation-centers |
 
   Scenario: Visit Show Page
     When I go the the recreation center page with objectid of 1
@@ -17,6 +17,7 @@ Feature: Recreation Center Show Page
     And I see "(202) 645-7454"
     And I see "Cardio Center"
     And I do not see "no"
+    And I see "Website"
 
   Scenario: Visit Show Page with no Pool or Phone
     When I go the the recreation center page with objectid of 2
@@ -24,6 +25,7 @@ Feature: Recreation Center Show Page
     And I do not see "none"
     And I do not see "No"
     And I see "Bayside High School"
+    And I see "Website"
 
   Scenario: Link Show Page Back to Index Page
     When I go the the recreation center page with objectid of 1
