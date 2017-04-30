@@ -18,6 +18,10 @@ Then(/^I do not see "([^"]*)"$/) do |arg1|
   expect(page).to have_no_content(arg1)
 end
 
+Then(/^"([^"]*)" is on the page$/) do |arg1|
+  page.should have_css(arg1)
+end
+
 Given(/^there is a recreation center with:$/) do |table|
   table.hashes.each do |hash|
     rec_center = RecreationCenterDataObject.new(hash)

@@ -6,62 +6,74 @@
     <i class='red remove circle outline icon'></i>
   <% end %>
   </h1>
-  <div class='ui container'>
-    <div class="ui list">
-      <div class='item'>
-        <% if @recreation_center.status == "Open" %>
-          <i class='green check circle outline icon'></i>
-        <% else %>
-          <i class='red remove circle outline icon'></i>
-        <% end %>
-        <div class='content'>
-          <%= @recreation_center.status %>
+  <div class="ui grid">
+    <div class="eight wide column">
+      <div class='ui container'>
+        <div class="ui list">
+          <div class='item'>
+            <% if @recreation_center.status == "Open" %>
+              <i class='green check circle outline icon'></i>
+            <% else %>
+              <i class='red remove circle outline icon'></i>
+            <% end %>
+            <div class='content'>
+              <%= @recreation_center.status %>
+            </div>
+          </div>
+          <div class='item'>
+            <i class="marker icon"></i>
+            <div class='content'>
+              <%= @recreation_center.address %>
+            </div>
+          </div>
+          <% if @recreation_center.phone? %>
+            <div class='item'>
+              <i class="call icon"></i>
+              <div class='content'>
+                <%= @recreation_center.phone %>
+              </div>
+            </div>
+          <% end %>
+          <div class='item'>
+            <i class="browser icon"></i>
+            <div class='content'>
+              <a href=<%= @recreation_center.web_url %>>Website</a>
+            </div>
+          </div>
+          <% if @recreation_center.pool? %>
+            <div class='item'>
+              <i class="life ring icon"></i>
+              <div class='content'>
+                <%= @recreation_center.pool_name %> (<%= @recreation_center.pool %>)
+              </div>
+            </div>
+          <% end %>
+          <% if @recreation_center.fitness_center? %>
+            <div class='item'>
+              <i class="heartbeat icon"></i>
+              <div class='content'>
+                <%= @recreation_center.fitness_center %>
+              </div>
+            </div>
+          <% end %>
+          <% if @recreation_center.school_site? %>
+            <div class='item'>
+              <i class="university icon"></i>
+              <div class='content'>
+                <%= @recreation_center.school_site %>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
-      <div class='item'>
-        <i class="marker icon"></i>
-        <div class='content'>
-          <%= @recreation_center.address %>
-        </div>
-      </div>
-      <% if @recreation_center.phone? %>
-        <div class='item'>
-          <i class="call icon"></i>
-          <div class='content'>
-            <%= @recreation_center.phone %>
-          </div>
-        </div>
-      <% end %>
-        <div class='item'>
-          <i class="browser icon"></i>
-          <div class='content'>
-            <a href=<%= @recreation_center.web_url %>>Website</a>
-          </div>
-        </div>
-      <% if @recreation_center.pool? %>
-        <div class='item'>
-          <i class="life ring icon"></i>
-          <div class='content'>
-            <%= @recreation_center.pool_name %> (<%= @recreation_center.pool %>)
-          </div>
-        </div>
-      <% end %>
-      <% if @recreation_center.fitness_center? %>
-        <div class='item'>
-          <i class="heartbeat icon"></i>
-          <div class='content'>
-            <%= @recreation_center.fitness_center %>
-          </div>
-        </div>
-      <% end %>
-      <% if @recreation_center.school_site? %>
-        <div class='item'>
-          <i class="university icon"></i>
-          <div class='content'>
-            <%= @recreation_center.school_site %>
-          </div>
-        </div>
-      <% end %>
+    </div>
+    <div class="two wide column">
+      <iframe
+         id='google-maps'
+         width="450"
+         height="300"
+         frameborder="0" style="border:0"
+                         src=<%= @recreation_center.google_map_url %> allowfullscreen>
+      </iframe>
     </div>
   </div>
-</div>

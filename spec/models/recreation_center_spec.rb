@@ -72,4 +72,13 @@ RSpec.describe RecreationCenter, :type => :model do
       end
     end
   end
+
+  describe '#google_map_url' do
+  let(:recreation_center) { RecreationCenter.new(x: x, y: y) }
+    let(:x) { -1.01 }
+    let(:y) { 1.01 }
+    it 'returns Google map api url for x and y' do
+      expect(recreation_center.google_map_url).to eq 'https://www.google.com/maps/embed/v1/place?key=this_is_a_test_key&q=1.01,-1.01'
+    end
+  end
 end
